@@ -23,6 +23,8 @@ function setup() {  // 화면 세팅공간 (실행시 처음에 한번 실행)
 function draw() {   // 1초에 60프레임씩 무한 반복
   //wave.amp(ampValue, 0.1);  //++
   wave.freq(ampValue);
+
+
 }
 
 
