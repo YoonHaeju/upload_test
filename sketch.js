@@ -18,5 +18,5 @@ function deviceMoved(){   // 디바이스가 움직이면
   r= map(accelerationX, -90, 90, 100, 175);   // 가속도 센서
   g= map(accelerationY, -90, 90, 100, 200);
   b= map(accelerationZ, -90, 90, 100, 200);
-  text(accelerationX + "," +  accelerationY + "," + accelerationZ, 10, 10); // 화면상에 글씨가 뜨도록
+  text(accelerationX + "," +  accelerationY + "," + accelerationZ, 50, 50); // 화면상에 글씨가 뜨도록
 }
