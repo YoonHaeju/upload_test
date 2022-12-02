@@ -1,34 +1,20 @@
-var wave;
-var playing = false;
+// 폰이 흔들리는 속도에 따라서 색이 변경됨
 
-function setup() {  // 화면 세팅공간 (실행시 처음에 한번 실행)
-  //createCanvas(displayWidth, displayHeight);  // 각 휴대폰 화면의 크기에 맞춰서 보이도록
-  createCanvas(640, 480);
-
-  wave = new p5.Oscillator();   // osc~의 역할
-  wave.setType('sine');   //파형을 sine파로
-  wave.freq(440); // 주파수 (Hz) frequancy
-  wave.amp(1);    // 소리의 크기 (볼륨) // 0~1
-  
-  button = createButton('play/pause');
-  button.mousePressed(toggle);
-
+let r, g, b;
+function setup(){
+  createCanvas(displayWidth, displayHeight);
+  r= random(50, 255);
+  g= random(0, 200);
+  b= random(50, 255);
 }
 
-/*
-function draw() {   // 1초에 60프레임씩 무한 반복
-  
-
+function draw(){
+  background(r, g, b);
+  console.log('draw');
 }
-*/
 
-function toggle(){
-  if(!playing){
-    wave.start();   // 소리가 남
-    wave.amp(0.5, 1);
-    playing = true;
-  }else{
-    wave.amp(0, 1);
-    playing=false;
-  }
+function deviceMoved(){
+  r= map(accelerationX, -90, 90, 100, 175);   // 가속도 센서
+  g= map(accelerationY, -90, 90, 100, 200);
+  b= map(accelerationZ, -90, 90, 100, 200);
 }
