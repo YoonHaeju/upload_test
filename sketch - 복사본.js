@@ -27,10 +27,10 @@ function draw() {   // 1초에 60프레임씩 무한 반복
 function toggle(){
   if(!playing){
     wave.start();   // 소리가 남
-    wave.amp(0.5, 1);
+    wave.amp(0.5, 1);   // 1프레임마다 볼륨을 1로 
     playing = true;
   }else{
-    wave.amp(0, 1);
+    wave.amp(0, 1);     // 1프레임마다 볼륨을 1로 
     playing=false;
   }
 }
